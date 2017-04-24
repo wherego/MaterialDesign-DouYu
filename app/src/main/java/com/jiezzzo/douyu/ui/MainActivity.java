@@ -1,5 +1,7 @@
 package com.jiezzzo.douyu.ui;
 
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -14,12 +16,15 @@ import android.widget.TextView;
 import com.jiezzzo.douyu.R;
 import com.jiezzzo.douyu.common.base.RxBaseActivity;
 import com.jiezzzo.douyu.common.util.AnimUtils;
+import com.jiezzzo.douyu.ui.homepage.search.SearchActivity;
 
 import butterknife.BindView;
 
+import static com.jiezzzo.douyu.R.id.toolbar;
+
 
 public class MainActivity extends RxBaseActivity implements NavigationView.OnNavigationItemSelectedListener {
-    @BindView(R.id.toolbar)
+    @BindView(toolbar)
     Toolbar mToolbar;
     @BindView(R.id.drawer)
     DrawerLayout mDrawer;
@@ -82,6 +87,10 @@ public class MainActivity extends RxBaseActivity implements NavigationView.OnNav
                 mDrawer.openDrawer(GravityCompat.END);
                 break;
             case R.id.menu_search:
+                View searchMenuView = mToolbar.findViewById(R.id.menu_search);
+                Bundle options = ActivityOptions.makeSceneTransitionAnimation(this, searchMenuView,
+                        getString(R.string.transition_search_back)).toBundle();
+                startActivityForResult(new Intent(this, SearchActivity.class), 0, options);
                 break;
         }
         return super.onOptionsItemSelected(item);

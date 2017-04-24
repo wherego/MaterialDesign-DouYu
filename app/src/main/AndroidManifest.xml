@@ -18,7 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.homepage.search.SearchActivity"/>
+        <activity android:name=".ui.homepage.search.SearchActivity"
+            android:theme="@style/NoTitleTranslucentTheme"/>
     </application>
 
 </manifest>
