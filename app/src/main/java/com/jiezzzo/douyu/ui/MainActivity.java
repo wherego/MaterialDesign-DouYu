@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.jiezzzo.douyu.R;
@@ -19,6 +20,8 @@ import com.jiezzzo.douyu.common.util.AnimUtils;
 import com.jiezzzo.douyu.ui.homepage.search.SearchActivity;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 import static com.jiezzzo.douyu.R.id.toolbar;
 
@@ -30,6 +33,8 @@ public class MainActivity extends RxBaseActivity implements NavigationView.OnNav
     DrawerLayout mDrawer;
     @BindView(R.id.nav_view)
     NavigationView mNavView;
+    @BindView(R.id.logo_btn)
+    ImageButton mLogoBtn;
 
     @Override
     protected int setContentView() {
@@ -44,8 +49,7 @@ public class MainActivity extends RxBaseActivity implements NavigationView.OnNav
 
     @Override
     protected void initToolbar() {
-        mToolbar.setTitle("Douyu.com");
-        mToolbar.setLogo(R.mipmap.douyu_96_ico);
+        mToolbar.setTitle("");
         setSupportActionBar(mToolbar);
     }
 
@@ -83,11 +87,8 @@ public class MainActivity extends RxBaseActivity implements NavigationView.OnNav
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_drawer:
-                mDrawer.openDrawer(GravityCompat.END);
-                break;
-            case R.id.menu_search:
-                View searchMenuView = mToolbar.findViewById(R.id.menu_search);
+            case R.id.home_search:
+                View searchMenuView = mToolbar.findViewById(R.id.home_search);
                 Bundle options = ActivityOptions.makeSceneTransitionAnimation(this, searchMenuView,
                         getString(R.string.transition_search_back)).toBundle();
                 startActivityForResult(new Intent(this, SearchActivity.class), 0, options);
@@ -108,7 +109,12 @@ public class MainActivity extends RxBaseActivity implements NavigationView.OnNav
             case R.id.nav_user:
                 break;
         }
-        mDrawer.closeDrawer(GravityCompat.END);
+        mDrawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @OnClick(R.id.logo_btn)
+    public void onViewClicked() {
+        mDrawer.openDrawer(GravityCompat.START);
     }
 }

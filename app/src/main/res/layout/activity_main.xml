@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:openDrawer="end"
+    tools:openDrawer="start"
     tools:context="com.jiezzzo.douyu.ui.MainActivity"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -21,8 +21,16 @@
             android:background="?attr/colorPrimary"
             android:outlineProvider="none"
             android:elevation="1dp"
+            app:contentInsetStart="8dp"
             app:titleTextAppearance="@style/TextAppearance.ToolbarTitleSmallCaps"
-            style="@style/Widget.Douyu.Toolbar"/>
+            style="@style/Widget.Douyu.Toolbar">
+            <ImageButton
+                android:id="@+id/logo_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="?android:actionBarSize"
+                android:background="@drawable/mid_grey_ripple"
+                android:src="@mipmap/logo_icon"/>
+            </android.support.v7.widget.Toolbar>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,7 +42,7 @@
         android:id="@+id/nav_view"
         android:layout_width="240dp"
         android:layout_height="match_parent"
-        android:layout_gravity="end"
+        android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer"/>

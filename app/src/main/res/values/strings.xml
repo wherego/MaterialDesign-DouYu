@@ -5,6 +5,9 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="drawer">Drawer</string>
-    <string name="search">Search</string>
+    <string name="search">扫描</string>
     <string name="transition_search_back" translatable="false">transition_search_back</string>
+    <string name="message">消息</string>
+    <string name="history">历史记录</string>
+    <string name="scanner">扫描</string>
 </resources>

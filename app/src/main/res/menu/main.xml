@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/menu_search"
-        android:title="@string/search"
-        android:icon="@drawable/ic_search_24dp"
-        app:showAsAction="always"/>
 
     <item
-        android:id="@+id/menu_drawer"
-        android:title="@string/drawer"
-        android:icon="@drawable/ic_drawer"
-        app:showAsAction="ifRoom"
+        android:id="@+id/home_message"
+        android:icon="@mipmap/home_message"
+        android:title="@string/message"
+        app:showAsAction="always"
         />
+    <item
+        android:id="@+id/home_history"
+        android:icon="@mipmap/image_history"
+        android:title="@string/history"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/home_scanner"
+        android:icon="@mipmap/image_scanner"
+        android:title="@string/scanner"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/home_search"
+        android:icon="@mipmap/image_search"
+        android:title="@string/search"
+        app:showAsAction="always"/>
 
 </menu>
