@@ -23,12 +23,12 @@ public abstract class RxBaseActivity extends RxAppCompatActivity {
         super.onCreate(savedInstanceState);
         super.setContentView(setContentView());
         bind = ButterKnife.bind(this);
-        initViews(savedInstanceState);
+        setupActivityComponent(AppApplication.get(this).getAppComponent());
         initToolbar();
         if (savedInstanceState == null) {
             firstInit();
         }
-        setupActivityComponent(AppApplication.get(this).getAppComponent());
+        initViews(savedInstanceState);
     }
 
     @LayoutRes
@@ -44,6 +44,7 @@ public abstract class RxBaseActivity extends RxAppCompatActivity {
     protected void initRecyclerView(){}
     protected void initRefreshLayout(){}
     protected void refreshFinish(){}
+
 
     @Override
     protected void onDestroy() {

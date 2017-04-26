@@ -67,4 +67,8 @@ dependencies {
     apt 'com.github.hotchemi:permissionsdispatcher-processor:2.3.2'
     //管理Activity,Fragment订阅
     compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.0.1'
+    //加载动画
+    compile 'com.tuyenmonkey:mkloader:1.2.0'
+    //支持多种状态的自定义View,方便切换到错误视图、空数据视图、网络异常等多种视图
+    compile 'com.classic.common:multiple-status-view:1.2'
 }

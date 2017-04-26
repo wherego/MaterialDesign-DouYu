@@ -15,7 +15,7 @@ public class Constant {
     /**
      * 基本URL.
      */
-    public static final String BASE_URL = "";
+    public static final String BASE_URL = "http://capi.douyucdn.cn/";
 
     /**
      * 缓存大小为10 MB.

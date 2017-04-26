@@ -20,4 +20,7 @@ public class AppModule {
     @Provides @Singleton Application provideApplication() {
         return mApplication;
     }
+    @Provides @Singleton AppClient provideAppClient() {
+        return new AppClient(mApplication.getApplicationContext());
+    }
 }

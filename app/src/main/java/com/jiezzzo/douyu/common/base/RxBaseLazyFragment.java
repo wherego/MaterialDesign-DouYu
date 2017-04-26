@@ -48,11 +48,11 @@ public abstract class RxBaseLazyFragment extends RxFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mUnbinder = ButterKnife.bind(this, view);
+        setupFragmentAppComponent(AppApplication.get(getApplicationContext()).getAppComponent());
         if (savedInstanceState == null) {
             firstInit();
         }
         initViews(savedInstanceState);
-        setupFragmentAppComponent(AppApplication.get(getApplicationContext()).getAppComponent());
     }
 
     @LayoutRes

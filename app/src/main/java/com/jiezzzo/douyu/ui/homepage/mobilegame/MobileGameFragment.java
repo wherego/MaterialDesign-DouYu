@@ -13,9 +13,9 @@ import com.jiezzzo.douyu.common.base.RxBaseLazyFragment;
 public class MobileGameFragment extends RxBaseLazyFragment {
 
     public static MobileGameFragment newInstance() {
-        
+
         Bundle args = new Bundle();
-        
+
         MobileGameFragment fragment = new MobileGameFragment();
         fragment.setArguments(args);
         return fragment;
